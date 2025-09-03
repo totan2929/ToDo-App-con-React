@@ -8,7 +8,7 @@ const Input = () => {
       </div>
       <input
         type="text"
-        className='w-full pl-12 pr-4 py-3 bg-gray-700 rounded-md focus:outline-none focus:shadow-lg focus:border-blue-500 transition-all duration-300 ease-in-out placeholder:italic font-inter'
+        className='w-full pl-12 pr-4 py-3 bg-gray-600 rounded-md focus:outline-none focus:shadow-lg focus:border-blue-500 transition-all duration-300 ease-in-out placeholder:italic font-inter'
         placeholder="Nueva tarea"
       />
     </div>
