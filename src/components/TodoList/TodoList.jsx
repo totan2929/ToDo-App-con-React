@@ -1,9 +1,15 @@
-import React from 'react'
+import TodoFilters from "../TodoFilters/TodoFilters";
 
-const TodoList = ({children}) => {
+
+const TodoList = ({ children }) => {
   return (
-    <div className='flex flex-col mt-7 rounded-md overflow-hidden shadow-2xl'>{children}</div>
-  )
-}
+    <div className="flex flex-col mt-7 rounded-md overflow-hidden shadow-2xl">
+      {children}
+      <TodoFilters />
+    </div>
+  );
+};
 
-export default TodoList
+
+
+export default TodoList;
