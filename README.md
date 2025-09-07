@@ -1,12 +1,75 @@
-# React + Vite
+# 📌 ToDo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web de lista de tareas desarrollada en **React** con **Tailwind CSS**. Permite agregar, completar, filtrar y eliminar tareas de forma sencilla con una interfaz moderna y responsiva.  
 
-Currently, two official plugins are available:
+## ✨ Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ➕ **Agregar nuevas tareas** desde el input con tecla Enter.  
+- ✅ **Marcar como completada** o reactivar una tarea con un clic.  
+- ❌ **Eliminar tareas** individualmente.  
+- 🧹 **Limpiar todas las tareas completadas** de una vez.  
+- 🔎 **Filtros disponibles**:  
+  - Todas  
+  - Activas  
+  - Completadas  
+- 🎨 Estilos personalizados con **Tailwind CSS**, scroll minimalista y tipografía moderna.  
 
-## Expanding the ESLint configuration
+## 📂 Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── App.jsx                  # Componente principal con lógica de estado y filtros
+├── index.css                # Estilos base con Tailwind y personalización
+├── components/
+│   ├── Title/Title.jsx       # Título de la aplicación
+│   ├── Input/Input.jsx       # Input para agregar tareas
+│   ├── Todo/Todo.jsx         # Representación individual de una tarea
+│   ├── TodoList/TodoList.jsx # Lista de tareas y renderizado de filtros
+│   ├── TodoFilters/
+│   │   ├── TodoFilters.jsx          # Contenedor de filtros
+│   │   └── TodoFilters.components.js # Botones y contenedores auxiliares
+└── assets/
+    ├── checkList.svg         # Icono de tarea completada
+    └── delete.svg            # Icono de eliminación
+```
+
+## ⚙️ Instalación y Uso
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/todo-app.git
+   cd todo-app
+   ```
+
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Ejecutar en desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+4. Abrir en el navegador:
+   ```
+   http://localhost:5173
+   ```
+
+## 🛠️ Tecnologías Utilizadas
+
+- [React](https://react.dev/)  
+- [Vite](https://vitejs.dev/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+
+## 📸 Vista Previa
+
+![Preview](./preview.png)
+
+## 📜 Licencia
+
+Este proyecto es de uso libre bajo la licencia MIT.  
+
+## 👨‍💻 Autor
+
+- Jonathan Cañola Salazar  

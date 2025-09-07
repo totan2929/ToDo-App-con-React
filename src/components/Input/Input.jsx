@@ -1,6 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 
-const Input = () => {
+const Input = ({addTodo}) => {
+  const [title, setTitle] = useState('')
+
+  const handleTodo = (e) => {
+    if(e.key === 'Enter' && title.trim() !== ''){
+      addTodo(title)
+      setTitle('')
+    }
+  }
+
   return (
     <div className='mt-6 relative'>
       <div className='absolute top-0 left-0 w-12 h-12 flex items-center justify-center pointer-events-none'>
@@ -10,6 +19,9 @@ const Input = () => {
         type="text"
         className='w-full pl-12 pr-4 py-3 bg-gray-600 rounded-md focus:outline-none focus:shadow-lg focus:border-blue-500 transition-all duration-300 ease-in-out placeholder:italic font-inter'
         placeholder="Nueva tarea"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+        onKeyDown={e => handleTodo(e)}
       />
     </div>
   )
