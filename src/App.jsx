@@ -7,10 +7,7 @@ import TodoList from "./components/TodoList/TodoList";
 function App() {
 
   const [todos, setTodos] = useState([
-    { id: 1, title: 'Tarea 1', completed: false },
-    { id: 2, title: 'Tarea 2', completed: true },
-    { id: 3, title: 'Tarea 3', completed: false },
-    { id: 4, title: 'Tarea 4', completed: true },
+    
   ])
 
   const [activeFilter, setActiveFilter] = useState("Todas");
@@ -36,9 +33,11 @@ function App() {
   }
 
   const handleDelete = (id) => {
+  if (window.confirm('¿Eliminar esta tarea?')) {
     const updatedList = todos.filter(todo => todo.id !== id)
     setTodos(updatedList)
   }
+}
 
   
 
@@ -52,6 +51,11 @@ const showAllTodos = () => setActiveFilter("Todas");
 const showActiveTodos = () => setActiveFilter("Activas");
 const showCompletedTodos = () => setActiveFilter("Completadas");
 
+const stats = {
+  total: todos.length,
+  pending: todos.filter(t => !t.completed).length,
+  done: todos.filter(t => t.completed).length,
+};
 
   useEffect(() => {
     if(activeFilter === 'Todas'){
@@ -83,6 +87,7 @@ const showCompletedTodos = () => setActiveFilter("Completadas");
           showActiveTodos={showActiveTodos}
           showCompletedTodos={showCompletedTodos}
           handleClearCompleted={handleClearCompleted}
+           stats={stats}
           />
     </div>
   </div>

@@ -7,11 +7,14 @@ const FiltersContainer = ({ children }) => {
 };
 
 
-const ItemsLeft = ({ total=0 }) => {
+const ItemsLeft = ({ total = 0, pending = 0, done = 0 }) => {
   return (
-    <p className="text-sm text-gray-400">{total} tareas </p>
+    <p className="text-sm text-gray-400">
+      Total: {total} · Pendientes: {pending} · Completadas: {done}
+    </p>
   );
-}
+};
+
 
 
 const FilterButtonContainer = ({ children }) => {

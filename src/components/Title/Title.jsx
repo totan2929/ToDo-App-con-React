@@ -6,4 +6,10 @@ const Title = ({title}) => {
   )
 }
 
+import PropTypes from 'prop-types'
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+}
+
+
 export default Title

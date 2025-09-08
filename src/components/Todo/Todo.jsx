@@ -15,7 +15,7 @@ const {id, title, completed} = todo
             <span onClick={() => handleSetCompleted(id)} className='border-solid border border-gray-500 rounded-full w-5 h-5 cursor-pointer m-2'></span>
 
           )}
-            <p className={'pl-3' + (completed && "line-through") }>
+            <p className={`pl-3 ${completed ? "line-through" : ""}`}>
               {title}
             </p>    
         </div>
@@ -23,5 +23,17 @@ const {id, title, completed} = todo
     </div>
   )
 }
+
+import PropTypes from 'prop-types'
+Todo.propTypes = {
+  todo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  }).isRequired,
+  handleSetCompleted: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+}
+
 
 export default Todo
